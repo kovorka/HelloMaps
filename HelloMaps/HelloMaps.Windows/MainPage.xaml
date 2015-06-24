@@ -5,12 +5,28 @@
     xmlns:local="using:HelloMaps"
     xmlns:bm="using:Bing.Maps"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"    
+    Loaded="Page_Loaded"
+    mc:Ignorable="d" 
+    xmlns:sd="using:HelloMaps.ViewModels.Sample"    
+    d:DataContext="{Binding ViewModel, Source={d:DesignInstance Type=sd:MainPageViewModelSample,IsDesignTimeCreatable=True}}"    
+    >
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel>
-            <bm:Map Credentials="At7DLWgsGXrZmSspqE3SDInq8LFfBfNXS-UwNt8YEEGKHxhXCBRi_k-Kdc6LA-hS" ShowTraffic="False" ZoomLevel="10" />
-        </StackPanel>
+            <TextBlock Text="{Binding PageTitle}" HorizontalAlignment="Center" Style="{StaticResource HeaderTextBlockStyle}" Padding="10" />
+            <bm:Map x:Name="MyMap" Credentials="At7DLWgsGXrZmSspqE3SDInq8LFfBfNXS-UwNt8YEEGKHxhXCBRi_k-Kdc6LA-hS" ShowTraffic="False" ZoomLevel="10" Height="600" />
+            <ListView ItemsSource="{Binding OfficerList}" Padding="50">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="{Binding Firstname}" Foreground="Red"/>
+                            <TextBlock Text="{Binding Lastname}"/>
+                            <TextBlock Text="{Binding DateOfBirth}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>        
     </Grid>
 </Page>

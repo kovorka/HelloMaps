@@ -135,6 +135,16 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\HelloMaps.Data\HelloMaps.Data.csproj">
+      <Project>{8219000e-f3d1-4ee4-b444-be6421ab1509}</Project>
+      <Name>HelloMaps.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HelloMaps.Entities\HelloMaps.Entities.csproj">
+      <Project>{bdda0508-cc35-4b2b-85d5-c6ec85e8abea}</Project>
+      <Name>HelloMaps.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>
