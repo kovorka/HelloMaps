@@ -1,4 +1,4 @@
 ?Hi Team! Add your name to the list when you've figured out how to check in your changes to GitHub!
 
 * Ben Collett
-* Meng Chua
+* Meng Chua is here
